@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+
+	<meta charset="UTF-8">
+
+	<title>flask-test-page</title>
+</head>
+<body>
+<!-- <fieldset>
+		<legend>
+			GET방식
+		</legend>
+		<form action="getpost" method="GET">
+			<input type="text" name="getget" placeholder="Input name"/>
+			<input type="submit" value="Posting" />
+		</form>
+	</fieldset>
+	=========================================<br>
+
+	{{get_variable}}<br><br><br>
+
+	=========================================<br>
+
+	<fieldset>
+		<legend>
+			POST방식
+		</legend>
+		<form action="getpost" method="POST">
+			<input type="text" name="postpost" placeholder="Input name"/>
+			<input type="submit" value="Posting" />
+		</form>
+	</fieldset>
+	=========================================<br>
+
+	{{post_variable}}<br><br><br>
+
+	=========================================<br>
+-->
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4" >
+			<h1>searching</h1>
+			<form action="crawl" method="post">
+				<input type="text" name="crawl" placeholder="input"/>
+				<input type="submit" value="고고싱" />
+			</form>
+			{%if result %}
+			{%for title in result %}
+			<div>{{title}}</div>
+			{% endfor %}
+			{% endif %}
+		</div>
+	</div>
+</div>
+
+
+
+
+		</body>
+		</html>
