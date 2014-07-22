@@ -116,8 +116,27 @@ body{
 	color:#ffffff;
 }
 
-.album2{
-	
+.album2 img{
+	width:450px;
+	height:450px;
+	margin-right: 10px;
+}
+
+#two2,#three3{
+	display: none;
+}
+
+.album3 img{width:100%;
+	height:100%;
+}
+
+.album4{
+	width:100%;
+	height:100%;
+	margin-right: 10px;
+	position:absolute;
+}
+
 /*
 .explain{height:50%;}
 
