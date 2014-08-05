@@ -1,0 +1,50 @@
+{% extends "head.html" %}
+{% block head %}
+<link type="text/css" rel="stylesheet" href="/static/css/yeah.css"/>
+<script type="text/javascript" src="/static/js/test.js"></script>
+<title>Fun Song</title>
+{% endblock %}
+
+{% block body %}
+
+<div>
+	<form action="gugu" method="get">
+		<input type="text" name="danstart">
+		<input type="text" name="danend">
+		<input type="submit" value="gugu!">
+	</form>
+	{% if gugudan %}
+	<div>
+		{% for i in gugudan %}
+		<p>{{i}}</p>
+		{% endfor %}
+	</div>
+	{% endif %}
+</div>
+
+
+<div>
+	<form action="cal" method="post">
+		<input type="text" name="x">
+		<input type="text" name="op">
+		<input type="text" name="y">
+		<input type="submit" value="calculate!">
+	</form>
+	
+	<div>
+		<p>{{calresult}}</p>
+	</div>
+	
+</div>
+
+<div>
+	<form action="lotto" method ="get">
+
+		<input type = "submit" value="lotto!!!" name = "getlotto">
+	</form>
+	<div>
+		<p>{{lottos}}</p>
+	</div>
+</div>
+
+	{% endblock %}

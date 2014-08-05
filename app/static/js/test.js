@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-	a('#one1','#two2','#three3');
+	// a('#one1','#two2','#three3');
   $('a[href^="#"]').click(function(e){
     e.preventDefault();
     var target = this.hash;

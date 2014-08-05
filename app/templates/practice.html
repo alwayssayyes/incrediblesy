@@ -1,0 +1,53 @@
+{% extends "head.html" %}
+
+{% block head %}
+<link type="text/css" rel="stylesheet" href="/static/css/tweet.css"/>
+<script type="text/javascript" src="/static/js/test.js"></script>
+<title>Tweet</title>
+{% endblock %}
+
+
+{% block body %}
+
+{% if Database %}
+{% for item in Database %}
+<div class ="container">
+	<div class="row">
+		<div class ="col-md-4">
+			<img src="{{url_for("shows", key=item.key())}}"/>
+		</div>
+		<div class ="col-md-8">{{ item.text }}</div>
+	</div>
+</div>
+{% endfor %}
+{% endif %}
+
+<!-- {% if url %}
+<img src="{{ url }}" class "col-md-4"/><br>
+{% endif %}
+
+{% if texta %}
+<p class "col-md-8">{{ texta }}</p>
+{% endif %}
+ -->
+<form action="{{ url_for("add_entry") }}" method="POST">
+	<dl>
+	<dt>id:
+		<dd><input type="text" name="id">
+	<dt>passwd:
+		<dd><input type="password" name="passwd">
+		<dd><input type="submit" value="POST">
+	</dl>
+</form>
+<ul>
+	{% for member in members %}
+	{{ member.userId() }}
+	{{ member.userPasswd() }}
+	{% endfor %}
+
+<input type="file" name='photo'><br>
+<input type="text" name='text'>
+<input type="submit" value="submit">
+</form>
+
+{% endblock %}
