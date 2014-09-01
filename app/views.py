@@ -34,48 +34,48 @@ def main():
     form = None
     return render_template('photo.html', form=form)
     
-# @app.route('/tweet', methods=["GET", "POST"])
-# def tweet():
-#     if request.method == 'POST':
+@app.route('/tweet', methods=["GET", "POST"])
+def tweet():
+    if request.method == 'POST':
 
-#         post_data = request.files.get('photo')
-#         filestream = post_data.read()
-#         post_dataa = request.form.get('text')
-#         upload_data = Tweet()
-#         upload_data.photo = db.Blob(filestream)
-#         upload_data.text = post_dataa
-#         upload_data.put()
-#         datalist=Tweet.all()
+        post_data = request.files.get('photo')
+        filestream = post_data.read()
+        post_dataa = request.form.get('text')
+        upload_data = Tweet()
+        upload_data.photo = db.Blob(filestream)
+        upload_data.text = post_dataa
+        upload_data.put()
+        datalist=Tweet.all()
 
-#         url = url_for("shows", key=upload_data.key())
+        url = url_for("shows", key=upload_data.key())
 
-#         return render_template("photo.html", texta=post_dataa, url=url, Tweet=datalist)
+        return render_template("photo.html", texta=post_dataa, url=url, Tweet=datalist)
 
-#     else:
-#         return render_template('photo.html')
+    else:
+        return render_template('photo.html')
 
-# @app.route('/upload', methods=["GET", "POST"])
-# def upload_db():
-#     if request.method == 'POST':
-#         post_data = request.files.get('photo')
-#         filestream =post_data.read()
-#         upload_data =Photo()
-#         upload_data.photo =db.Blob(filestream)
-#         upload_data.put()
-#         url = url_for("shows", key=upload_data.key())
+@app.route('/upload', methods=["GET", "POST"])
+def upload_db():
+    if request.method == 'POST':
+        post_data = request.files.get('photo')
+        filestream =post_data.read()
+        upload_data =Photo()
+        upload_data.photo =db.Blob(filestream)
+        upload_data.put()
+        url = url_for("shows", key=upload_data.key())
 
-#         return render_template("photo.html", url=url)
-#     else:
-#         return render_template('photo.html')
+        return render_template("photo.html", url=url)
+    else:
+        return render_template('photo.html')
 
 
 
         
-# @app.route('/show/<key>', methods=['GET'])
-# def shows(key):
-#     uploaded_data = db.get(key)
-#     return current_app.response_class(
-#         uploaded_data.photo)
+@app.route('/show/<key>', methods=['GET'])
+def shows(key):
+    uploaded_data = db.get(key)
+    return current_app.response_class(
+        uploaded_data.photo)
 
     
 
